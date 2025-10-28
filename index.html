@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>EnergieHaus.RUHR — Coming Soon</title>
+  <style>
+    :root {
+      --bg: #0b1220;
+      --grid: rgba(255, 255, 255, 0.05);
+      --line: rgba(200, 230, 255, 0.7);
+      --accent: #b8f2ff;
+      --text: #e9faff;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: "Inter", system-ui, sans-serif;
+    }
+
+    /* 🔹 Фон — миллиметровка */
+    body::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(var(--grid) 1px, transparent 1px),
+        linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+      background-size: 40px 40px;
+      z-index: 0;
+    }
+
+    .text {
+      position: relative;
+      z-index: 3;
+      text-align: center;
+      user-select: none;
+    }
+
+    h1 {
+      font-size: clamp(30px, 5vw, 60px);
+      margin: 0;
+      color: var(--accent);
+      letter-spacing: 0.04em;
+    }
+
+    p {
+      margin-top: 10px;
+      opacity: 0.8;
+      font-size: clamp(16px, 2vw, 22px);
+    }
+
+    .subtext {
+      margin-top: 14px;
+      font-size: clamp(14px, 1.8vw, 20px);
+      color: rgba(233, 250, 255, 0.6);
+      font-style: italic;
+    }
+
+    /* 🔹 SVG-анимация */
+    .blueprint {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      z-index: 1;
+      opacity: 0.7;
+    }
+
+    svg {
+      width: 140%;
+      height: 140%;
+      position: absolute;
+      top: -20%;
+      left: -20%;
+      stroke: var(--line);
+      fill: none;
+    }
+
+    path, circle, rect, line, polyline {
+      stroke-width: 1.8;
+      stroke-dasharray: 500;
+      stroke-dashoffset: 500;
+      animation: drawAndFade 12s ease-in-out infinite;
+    }
+
+    @keyframes drawAndFade {
+      0% { stroke-dashoffset: 500; opacity: 0; }
+      10% { opacity: 1; }
+      40% { stroke-dashoffset: 0; opacity: 1; }
+      80% { opacity: 0; }
+      100% { stroke-dashoffset: 500; opacity: 0; }
+    }
+
+    .loop {
+      animation: rotate 60s linear infinite;
+      transform-origin: center;
+    }
+
+    @keyframes rotate {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+  <div class="text">
+    <h1>EnergieHaus.RUHR</h1>
+    <p>Wir bringen Wärme mit System 🔧</p>
+    <div class="subtext">Wir sind bald für Sie da</div>
+  </div>
+
+  <div class="blueprint">
+    <svg viewBox="0 0 1000 700" class="loop">
+      <!-- Трубные линии -->
+      <path d="M100 150 H900" />
+      <path d="M100 350 H900" />
+      <path d="M100 550 H900" />
+      <path d="M250 100 V600" />
+      <path d="M750 100 V600" />
+
+      <!-- Клапаны -->
+      <circle cx="250" cy="350" r="20" />
+      <line x1="240" y1="340" x2="260" y2="360" />
+      <line x1="240" y1="360" x2="260" y2="340" />
+
+      <circle cx="750" cy="250" r="20" />
+      <polyline points="740,240 750,260 760,240" />
+
+      <!-- Насос -->
+      <circle cx="500" cy="350" r="26" />
+      <path d="M486 336 L514 364 M514 336 L486 364" />
+
+      <!-- Термометр -->
+      <rect x="490" y="180" width="20" height="60" rx="5" />
+      <circle cx="500" cy="250" r="10" />
+
+      <!-- Стрелки потока -->
+      <polyline points="150,350 170,340 170,360 150,350" />
+      <polyline points="850,350 830,340 830,360 850,350" />
+
+      <!-- Соединители -->
+      <path d="M400 150 Q420 170 440 150 T480 150" />
+      <path d="M520 550 Q540 530 560 550 T600 550" />
+    </svg>
+  </div>
+</body>
+</html>

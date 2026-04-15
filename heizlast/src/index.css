@@ -1,0 +1,117 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  
+  --color-app-bg: var(--bg-app);
+  --color-card-bg: var(--bg-card);
+  --color-main-text: var(--text-main);
+  --color-muted-text: var(--text-muted);
+  --color-accent: var(--accent);
+  --color-accent-fg: var(--accent-foreground);
+  --color-border-main: var(--border);
+  --color-input-bg: var(--input-bg);
+}
+
+:root {
+  /* Neutral / Classic - Professional & Clean */
+  --bg-app: #F8FAFC;
+  --bg-card: #FFFFFF;
+  --text-main: #1E293B;
+  --text-muted: #64748B;
+  --accent: #2563EB;
+  --accent-foreground: #FFFFFF;
+  --border: #E2E8F0;
+  --input-bg: #F1F5F9;
+}
+
+[data-theme='dark'] {
+  /* Monochromatic Dark - Technical & Deep */
+  --bg-app: #0F172A;
+  --bg-card: #1E293B;
+  --text-main: #F1F5F9;
+  --text-muted: #94A3B8;
+  --accent: #38BDF8;
+  --accent-foreground: #0F172A;
+  --border: #334155;
+  --input-bg: #0F172A;
+}
+
+[data-theme='blueprint'] {
+  /* Monochromatic Blue - Engineering */
+  --bg-app: #023047;
+  --bg-card: #05445E;
+  --text-main: #FFFFFF;
+  --text-muted: #8ECAE6;
+  --accent: #219EBC;
+  --accent-foreground: #023047;
+  --border: rgba(255, 255, 255, 0.1);
+  --input-bg: rgba(0, 0, 0, 0.2);
+}
+
+[data-theme='forest'] {
+  /* Seasonal / Nature - Warm & Organic */
+  --bg-app: #FEFAE0;
+  --bg-card: #FFFFFF;
+  --text-main: #283618;
+  --text-muted: #606C38;
+  --accent: #BC6C25;
+  --accent-foreground: #FFFFFF;
+  --border: #DDA15E;
+  --input-bg: #F9F1D0;
+}
+
+[data-theme='midnight'] {
+  /* Vibrant / Neon - High Contrast */
+  --bg-app: #000000;
+  --bg-card: #111111;
+  --text-main: #FFFFFF;
+  --text-muted: #A1A1AA;
+  --accent: #F0ABFC;
+  --accent-foreground: #000000;
+  --border: #27272A;
+  --input-bg: #09090B;
+}
+
+[data-theme='clay'] {
+  /* Romantic / Warm - Soft & Elegant */
+  --bg-app: #FFF7ED;
+  --bg-card: #FFFFFF;
+  --text-main: #431407;
+  --text-muted: #9A3412;
+  --accent: #EA580C;
+  --accent-foreground: #FFFFFF;
+  --border: #FED7AA;
+  --input-bg: #FFEDD5;
+}
+
+[data-theme='serene'] {
+  /* Calm / Minimal - Soft Teal */
+  --bg-app: #F0FDFA;
+  --bg-card: #FFFFFF;
+  --text-main: #134E4A;
+  --text-muted: #0D9488;
+  --accent: #14B8A6;
+  --accent-foreground: #FFFFFF;
+  --border: #CCFBF1;
+  --input-bg: #F0FDFA;
+}
+
+[data-theme='viessmann'] {
+  /* Lebendig / Brand - Viessmann Red */
+  --bg-app: #FFFFFF;
+  --bg-card: #F9FAFB;
+  --text-main: #111827;
+  --text-muted: #4B5563;
+  --accent: #E30613;
+  --accent-foreground: #FFFFFF;
+  --border: #E5E7EB;
+  --input-bg: #F3F4F6;
+}
+
+body {
+  background-color: var(--bg-app);
+  color: var(--text-main);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}

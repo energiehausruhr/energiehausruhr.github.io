@@ -2,7 +2,7 @@
   "name": "Heizlastberechnung",
   "short_name": "Heizlast",
   "description": "App zur Heizlastberechnung nach DIN EN 12831-1",
-  "start_url": "/",
+  "start_url": "/heizlast/",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#0f172a",
